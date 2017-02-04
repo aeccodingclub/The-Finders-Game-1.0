@@ -1,0 +1,283 @@
+a{
+ color:inherit;
+}
+a:hover{
+color: inherit;
+}
+
+.christmas{
+background: #2F7336; 
+background: -webkit-linear-gradient(to left, #2F7336 , #AA3A38); 
+background: linear-gradient(to left, #2F7336 , #AA3A38);
+margin-top: -20px;
+margin-bottom: -10px;
+}
+.Barrio{
+font-family: 'Barrio', cursive;
+}
+.lobster{
+font-family: 'Homemade Apple', cursive;
+}
+.handlee{
+font-family: 'Calligraffitti', cursive;
+}
+.rock{
+font-family: 'Rock Salt', cursive;
+}
+.ceviche{
+font-family: 'Ceviche One', cursive;
+}
+.special{
+  font-family: 'Inconsolata',cursive;
+}
+
+.jonquil{
+background: #FFEEEE; 
+background: -webkit-linear-gradient(to left, #FFEEEE , #DDEFBB); 
+background: linear-gradient(to left, #FFEEEE , #DDEFBB); }
+
+.pacificdream{
+
+background: #34e89e;
+background: -webkit-linear-gradient(to left, #34e89e , #0f3443); 
+background: linear-gradient(to left, #34e89e , #0f3443); 
+}
+.venice{
+background: #6190E8;
+background: -webkit-linear-gradient(to left, #6190E8 , #A7BFE8);
+background: linear-gradient(to left, #6190E8 , #A7BFE8); 
+        
+}
+.royal{
+background: #141E30; 
+background: -webkit-linear-gradient(to left, #141E30 , #243B55); 
+background: linear-gradient(to left, #141E30 , #243B55); 
+        
+}
+.lizard{
+background: #304352; 
+background: -webkit-linear-gradient(to left, #304352 , #d7d2cc); 
+background: linear-gradient(to left, #304352 , #d7d2cc); 
+}
+.orca{
+background: #44A08D; 
+background: -webkit-linear-gradient(to left, #44A08D , #093637);
+background: linear-gradient(to left, #44A08D , #093637); 
+}
+.navbar{
+	background: #000000;
+background: -webkit-linear-gradient(to left, #000000 , #434343); 
+background: linear-gradient(to left, #000000 , #434343);
+        
+}
+.jumbotron{
+		padding-top:15px;
+		padding-bottom:20px;
+		margin-bottom:0px;
+		margin-right: 0px;
+		margin-left: 0px;
+		margin-top: -20px;
+		color:white;
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	}
+.jumbotron h1{
+	font-size: 60px;
+}
+.thumbnail{
+background: #0003;
+}
+	.side{
+		padding-bottom:30px
+		
+	}
+	.tab-content{
+		    max-height: 425px;
+	    	overflow: auto;
+	    	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	}
+	.display{
+		max-height:456px;
+		overflow: auto;
+		margin-top: 20px;
+	}
+	.up {
+	width:100%; 
+	text-align:center;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	}
+	.up a {
+			text-decoration: none;
+	}
+.button{
+	border-radius:30px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  z-index: 1;
+}
+
+.footer{		
+		padding: 30px 20px 30px 20px;
+		
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+		}
+#fgrad {
+		position: relative;
+		right: 0px;
+		left: 0px;
+		bottom: 0px;
+		margin-right:0px;
+		margin-left: 0px; 
+		margin-bottom:-20px;
+		background: -webkit-linear-gradient(to left, #141E30 , #243B55); 
+	background: linear-gradient(to left, #141E30 , #243B55); 
+		}
+.copyright{
+			text-align: center;
+			color: white;
+		}
+button.vision {
+    background: linear-gradient(to bottom right,#22d609, #555);
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: center;
+    outline: none;
+    transition:0.4s;
+    border-radius: 100px 12px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-top: 5px;
+    font-size: 20px;
+    text-align: center;
+}
+
+button.vision.active, button.vision:hover {
+    background: linear-gradient(to bottom right,#009911, #999);
+}
+
+.section {
+    
+    padding: 0px 40px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: 0.6s ease-in-out;
+    opacity: 0;
+
+}
+.section>ul{
+	margin-left: -40px;
+}
+.section.show {
+	text-decoration: none;
+    opacity: 1;
+    max-height: 200px;
+    overflow: auto;
+    padding-top: 16px;  
+}
+#moreb {
+		 background: linear-gradient(to bottom right,#FF0000, #3a1b1b);
+		 border-radius: 10px 10px 40px 40px;
+		}
+#moreb.vision.active, .vision:hover { 
+	background: linear-gradient(to bottom right,#286090, #3a1b1b); 
+}		
+#mores.section.show{ 
+	max-height: 500px;
+	overflow: auto;
+
+}
+.vision.foot {
+			background: linear-gradient(to bottom right,#16bbaa, #3a1b1b);
+		 	border-radius: 40px 40px 10px 10px;
+}
+.vision.foot.active, .vision.foot:hover { 
+	background: linear-gradient(to bottom right,#286090, #3a1b1b); 
+}	
+
+.sticky .sul li{
+  list-style:none;
+}
+.sticky .sul{
+  overflow:hidden;
+  padding:3em;
+}
+.sticky .sul li a{
+  text-decoration:none;
+  color:#000;
+  background:#ffc;
+  display:block;
+  height:20em;
+  width:20em;
+  padding:2em;
+  -moz-box-shadow:5px 5px 7px rgba(33,33,33,1);
+  -webkit-box-shadow: 5px 5px 7px rgba(33,33,33,.7);
+  box-shadow: 5px 5px 7px rgba(33,33,33,.7);
+  -moz-transition:-moz-transform .15s linear;
+  -o-transition:-o-transform .15s linear;
+  -webkit-transition:-webkit-transform .15s linear;
+}
+.sticky .sul li{
+  margin:1em;
+  float:left;
+}
+.sticky .sul li a{
+  -webkit-transform: rotate(-6deg);
+  -o-transform: rotate(-6deg);
+  -moz-transform:rotate(-6deg);
+}
+.sticky .sul li:nth-child(even) a{
+  -o-transform:rotate(4deg);
+  -webkit-transform:rotate(4deg);
+  -moz-transform:rotate(4deg);
+  position:relative;
+  top:5px;
+  background:#cfc;
+}
+.sticky .sul li:nth-child(3n) a{
+  -o-transform:rotate(-3deg);
+  -webkit-transform:rotate(-3deg);
+  -moz-transform:rotate(-3deg);
+  position:relative;
+  top:-5px;
+  background:#ccf;
+}
+.sticky .sul li:nth-child(5n) a{
+  -o-transform:rotate(5deg);
+  -webkit-transform:rotate(5deg);
+  -moz-transform:rotate(5deg);
+  position:relative;
+  top:-10px;
+}
+.sticky .sul li a:hover{
+ box-shadow:10px 10px 7px rgba(0,0,0,.7);
+  -moz-box-shadow:10px 10px 7px rgba(0,0,0,.7);
+  -webkit-box-shadow: 10px 10px 7px rgba(0,0,0,.7);
+  -webkit-transform: scale(1.25);
+  -moz-transform: scale(1.25);
+  -o-transform: scale(1.25);
+  position:relative;
+  z-index:5;
+}
+.sticky .sul li a:focus{
+  box-shadow:10px 10px 7px rgba(0,0,0,.7);
+  -moz-box-shadow:10px 10px 7px rgba(0,0,0,.7);
+  -webkit-box-shadow: 10px 10px 7px rgba(0,0,0,.7);
+  -webkit-transform: scale(1.25);
+  -moz-transform: scale(1.25);
+  -o-transform: scale(1.25);
+  position:relative;
+  z-index:5;
+}
+.sticky ol{text-align:center;}
+.sticky ol li{display:inline;padding-right:1em;}
+.sticky ol li a{color:#fff;}
+
+.tab-content{
+  margin-bottom: 20px;
+}
+
+
+
+
+

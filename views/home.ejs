@@ -1,0 +1,99 @@
+<% include partials/header %>
+<% if(currentUser){ %>
+<div class="container logo" style="padding-bottom:20px;">
+<center>
+<a href="/questions" class="button btn btn-primary btn-lg"> Move back to Questions Page </a>
+</div>
+</center>
+<% } %>
+<div class="row container-fluid">
+<div class="col-sm-2 logo">
+   
+    <center><img src="/images/logo.png"></center>
+  </div>
+ <div class="col-sm-8 logo">
+ <div id="landing-header">
+        <h1 class="rock" style="padding-bottom:20px;">Treasure Trove: The Finder's Game</h1>
+        <% if (!currentUser) { %>
+        <a href="#Modal2" role="button" data-toggle="modal" data-target="#Modal2" class=" button btn btn-lg btn-success">Register to Participate </a>
+        <% } %>
+</div>
+    
+  </div>
+  
+  <div class="col-sm-2 logo">
+    
+    <center><img src="/images/pyro.png" height=200px; width=200px></center>
+
+  </div>
+</div>
+
+
+ <ul class="slideshow">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+</ul>
+<div class="modal fade" id="Modal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button class="close" data-dismiss="modal">x</button>
+            <h2 class="modal-title text-center coiny">LOGIN</h2>
+          </div>
+          <div class="modal-body">
+            <h3>Don't have an account? <a href="#Modal2" role="button" data-toggle="modal" data-target="#Modal2">Register Here</a></h3>
+            <form role="form" action="/login" method="POST">
+              <div class="form-group">
+              <label for="6">Your nickname </label>
+                <input type="text" class="form-control" id="6" placeholder="username" name="username" required = "true">
+              </div>
+              <div class="form-group">
+              <label for="7">Password </label>
+                <input type="password" class="form-control" id="7" placeholder="Password" name="password" required = "true">
+              </div>
+                <button type="submit" name="submit" class="button btn btn-primary btn-lg btn-block">Login</button>
+            </form><br/>
+          </div>
+        </div>
+      </div>
+    </div>
+<div class="modal fade" id="Modal2">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button class="close" data-dismiss="modal">x</button>
+            <h2 class="modal-title text-center coiny">Register</h2>
+          </div>
+          <div class="modal-body">
+            <form role="form" action="/register" method="POST">
+              <div class="form-group">
+                <label for="1">Full Name: </label>
+                <input type="text" class="form-control" id="1" placeholder="Name" name="name" required = "true">
+              </div>
+              <div class="form-group">
+              <label for="2">Name of your institution: </label>
+                <input type="text" class="form-control"  id="2" placeholder="School/College/Institution" name="college" required = "true">
+              </div>
+              <div class="form-group">
+              <label for="3">E-mail address: </label>
+                <input type="email" class="form-control" id="3" placeholder="E-mail (Must be valid)" name="email" required = "true">
+              </div>
+              <div class="form-group">
+              <label for="4">A unique nickname: </label>
+                <input type="text" class="form-control" id="4" placeholder="Username/Nickname (make it unique)" name="username" required = "true">
+              </div>
+              <div class="form-group">
+              <label for="5">Password: </label>
+                <input type="password" class="form-control" id="5" placeholder="Password" name="password" required = "true">
+              </div>
+                <button type="submit" name="submit" class="button btn btn-primary btn-lg btn-block"> Sign Up </button>
+            </form><br/>
+          </div>
+        </div>
+      </div>
+    </div>
+</body>
+</html>  

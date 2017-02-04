@@ -1,0 +1,198 @@
+<% include partials/header %>
+<div class="lizard">
+<div class="row container-fluid jumbotron orca">
+`	<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+		<div class="container" style="padding-top:30px;">
+		<center><img src="/images/logo.png"></center>
+		</div>
+	</div>
+	<div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
+		<header>
+			<div class="container-fluid text-center"> 
+			<% if (currentUser.username=="admin") {%>
+				<h2 class="Barrio">Welcome Admin </h2>
+				<p class="lobster">Make 20 questions for the competition: the progress bar is setup to take only 20 values<br>
+				Make a key to enter in second round (better put it in image tags)
+				</p>
+			<% } %>
+			<% if (currentUser.username!="admin") {%>
+			<% if(count==0){ %>
+						<h1 class="Barrio">wait for the questions </h1>
+							
+			<% } else{ %>
+				<% users.forEach(function(user){%>
+						<% if (user.username==currentUser.username) { %>
+						<% if (user.score.length*10 < 100) { %>
+							<h1 class="Barrio">Welcome to Round One </h1>
+							<p class="lobster">The intelligent picker </p>
+						<% } %>
+						<% if (user.score.length*10 == 100) { %>
+							<h1 class="handlee">Find the key to move to the next round</h1>
+							<p class="lobster">Hint: Rearrange imagetags to get the key </p>
+						<% } %>
+						<% if (user.score.length*10 > 100) { %>
+							<h1 class="Barrio">Welcome to Round Two </h1>
+							<p class="lobster">The Vengeance</p>
+						<% } %>
+					<% } %>
+				<% }); %>
+			<% } %>
+			<% } %>
+				<% users.forEach(function(user){%>
+				<% if (user.username==currentUser.username && user.username!="admin"){ %>
+			 		<div class="progress">
+					  <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="<%= user.score.length * 5 %>" aria-valuemin="0" aria-valuemax="100" style="width:<%= user.score.length * 5 %>%">
+					  </div>
+					</div>
+				<% } %>				
+			 	<% }); %>	
+				<% if (currentUser.username==="admin"){ %>
+				<a href="/questions/new" class="button btn btn-primary btn-lg btn-block"> Create a new Question </a>
+				<a href="/admin" class="button btn btn-success btn-lg btn-block"> Details of all participants </a>
+				<% }else{ %>
+				<div class="table-responsive lobster" style="text-decoration:none;">
+					<table class="up table">
+						 	<tr class="text-center">
+							 	<td>
+								 	<h3> <span class="glyphicon glyphicon-book" aria-hidden="true"></span> <a href="/rules"> Rules </h3></a>			 		
+								</td>
+								<td>				
+									<h3> <span class="glyphicon glyphicon-flag" aria-hidden="true"></span><a href="/tools"> Tools</h3> </a>
+								</td>
+							</tr>
+					</table>
+				</div>
+				<% } %>	
+			</div>
+		</header>
+	</div>
+</div>
+<div class="row handlee">
+	<div class="col-lg-3 col-md-3 col-sm-5 col-xs-6">
+		<div class="row">
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center"> 
+				<ul class="nav nav-tabs" role="tablist" style="font-size:20px;">
+				    <li class="active"><a href="#com"> <strong>Pirate Box</strong></a></li>
+				    <li><a href="#ra"><strong>ScoreCard</strong></a></li>
+				</ul>
+				<div class="tab-content">
+					<div class="tab-pane fade in active" id="com">
+			    		<table class="table table-striped">
+							<thead class="text-center">
+								<td><strong>Name</strong></td>
+								<td><strong>Comments</strong></td>
+							</thead>							
+			 				<tbody>
+			 				<% if(currentUser.username==="admin"){ %>
+			 					<% comments.forEach(function(comment){%>
+			 					<tr> 
+			 						<td class="text-center"><%= comment.author.username %></td>
+			 						<td><%= comment.text %></td>
+			 						
+			 						<td>
+			 							<form action="/comment/<%= comment._id %>?_method=DELETE" method="POST">
+											<div class="form-group">
+										      <button type="submit" class="button btn btn-sm btn-link"> DELETE </button>
+										  	</div>
+										</form>
+									</td>
+								</tr>	
+								<% }); %>
+			 				<% } %>
+			 				<% if(currentUser.username!="admin"){ %>
+			 					<% comments.forEach(function(comment){%>
+			 						<% if(comment.author.username==currentUser.username || comment.author.username=="admin"){ %>
+			 							<tr> 
+					 						<td class="text-center"><%= comment.author.username %></td>
+					 						<td><%= comment.text %></td>
+										</tr>	
+			 						<% } %>
+			 					<% }); %>
+			 				<% } %>
+			 				</tbody>			 				
+						</table>
+			    	</div>
+			    	<div class="tab-pane fade" id="ra">
+			    		<table class="table table-striped">
+							<thead >
+								<th class="text-center"><strong>Name<strong></th>
+								<th class="text-center"><strong>Score<strong></th>
+							</thead>
+			 				<tbody>
+			 				<% users.forEach(function(user){%>
+			 				<% if (user.username!=="admin"){ %>
+			 					<tr> 
+			 						<td class="text-center"><%= user.username %></td>
+			 						<td class="text-center"><%= user.score.length * 10 %></td>
+			 					</tr>
+			 				<% } %>
+			 				<% }); %>
+			 				</tbody>
+						</table>
+					</div>
+				</div>	
+			</div>
+		</div>
+	</div>
+	<div class="col-lg-9 col-md-9 col-sm-7 col-xs-6 display">
+		<div class="row text-center" style="display:flex; flex-wrap: wrap;">
+		<% questions.forEach(function(question){%>
+			<div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+				<div class="thumbnail">
+					<img src="<%= question.imagetag %>" class="image-responsive">
+					<div class="caption">
+						<h4 class="rock" style="color:white;"><%= question.questiontag %></h4>
+					</div>
+					<p>
+					<% if (currentUser.username!="admin"){ %>
+					<% var s = currentUser.score; %>
+					<% var len= s.length; %>
+					<% var a = s.indexOf(question._id); %>
+					<% if(len!=0 && a!=-1){ %>
+					<a href="#" class="button btn btn-success btn-lg btn-block"> Solved </a>
+					<% } %>
+					<% if (a==-1 || len==0){ %>
+					<a href="/questions/<%= question._id %>" class="button btn btn-primary btn-lg btn-block"> Solve </a>
+					<% } %>
+					<% } %>
+					<% if(currentUser.username==="admin"){ %>
+					<div class="form-group">
+					<a href="/questions/<%= question._id %>" class="button btn btn-lg btn-primary btn-block"> Show </a>
+					</div>
+					<div class="form-group">
+					<a href="/questions/<%= question._id %>/edit" class="button btn btn-info btn-lg btn-block"> Edit </a>
+					<form action="/questions/<%= question._id %>?_method=DELETE" method="POST">
+					</div>
+					<div class="form-group">
+						      <button type="submit" class="button btn btn-lg btn-danger btn-block"> DELETE </button>
+	 				</form>
+	 				</div>
+	 				<% } %>
+					</p>
+				</div>		
+			</div>
+		<% }); %>
+		</div>
+	</div>
+</div>
+<div class="row container-fluid" style="margin-top: 20px;">
+	<form class="form-horizontal" action="/comment" method="POST">
+		<div class="col-lg-3 col-md-3 col-sm-12">
+			<div class="form-group form-group-lg" >
+				<input class="form-control" type="text" placeholder="Comment your queries" style="border-radius:30px;" name="text">
+			</div>
+		</div>
+		<div class="form-group-lg col-lg-2 col-md-2 col-sm-12" >
+			<button type="submit" class="button btn btn-primary btn-lg btn-block" style="margin-bottom: 10px;">Comment</button>
+		</div>
+	</form>
+</div>
+</div>
+<script>
+$(document).ready(function(){
+    $(".nav-tabs a").click(function(){
+        $(this).tab('show');
+    });
+});
+</script>
+<% include partials/footer %>

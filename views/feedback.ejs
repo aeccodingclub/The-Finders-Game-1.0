@@ -1,0 +1,95 @@
+<% include partials/header %>
+<div class="jonquil" style="margin-top: -20px; padding-top: 20px; color: black; margin-bottom: -15px; padding-bottom: 20px;">
+<div class="container">
+<center>
+	<a href="/questions" class="button btn btn-info btn-lg"> I will leave it later / Go back </a>
+</center>
+	<h1 class="text-center coiny"> Help Us Serve better.... Feedback please </h1>
+
+	<form class="form-horizontal" action="/feedback" method="POST">
+		<div class="col-sm-offset-1 col-sm-10">
+		<div class="form-group">
+		 <h3>Q. How was your overall experience playing this game </h3>
+		 <div class="radio">
+		  <label>
+		    <input type="radio" name="quesfeed" value="Wonderful" checked>
+		    It was a wonderful experience
+		  </label>
+		</div>
+		<div class="radio">
+		  <label>
+		    <input type="radio" name="quesfeed" value="Good">
+		    Good
+		  </label>
+		</div>
+		<div class="radio">
+		  <label>
+		    <input type="radio" name="quesfeed" value="Could be better">
+		    It could be better (please mention)
+		  </label>
+		</div>
+		<div class="radio">
+		  <label>
+		    <input type="radio" name="quesfeed" value="Didnt like">
+		    Didn't like it at all
+		  </label>
+		  </div>
+		</div>
+		</div>
+
+		<div class="col-sm-offset-1 col-sm-10">
+		<div class="form-group">
+		 <h3> Q. Do you want this event to be organised every year </h3>
+		 <div class="radio">
+		  <label>
+		    <input type="radio" name="cfeed" value="yes" checked>
+		    Yes
+		  </label>
+		</div>
+		<div class="radio">
+		  <label>
+		    <input type="radio" name="cfeed" value="no">
+		    No
+		  </label>
+		  </div>
+		</div>
+		</div>
+		<div class="col-sm-offset-1 col-sm-10">
+		<div class="form-group">
+		 <h3>Q. Did you like the working and design of the website </h3>
+		 <div class="radio">
+		  <label>
+		    <input type="radio" name="webfeed" value="yes" checked>
+		    Yes
+		  </label>
+		</div>
+		<div class="radio">
+		  <label>
+		    <input type="radio" name="webfeed" value="no">
+		    No
+		  </label>
+		  </div>
+		 <div class="radio">
+		  <label>
+		    <input type="radio" name="webfeed" value="it could be better">
+		    It could be better (please mention)
+		  </label>
+		  </div>
+		</div>
+		</div>
+		<div class="col-sm-offset-1 col-sm-10">
+		  <div class="form-group">
+		  <h3> || Expect more from us.... Please Write Below ||</h3>
+		 
+		      <textarea class="form-control" rows="3" name="newfeed" placeholder="Any more suggestions"></textarea>	
+		    </div>
+		  </div>
+		</div>
+		<div class="container form-group">
+		<center>
+		<button type="submit" class="button btn btn-lg btn-primary">Submit Feedback</button>
+		</center> 
+	</form>
+</div>
+</div>
+<% include partials/footer %>

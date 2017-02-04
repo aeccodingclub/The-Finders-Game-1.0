@@ -1,0 +1,101 @@
+<% include partials/header %>
+<div class="container">
+<a href="/questions" class="button btn btn-info btn-lg btn-block" style="margin-bottom:20px;"> Go Back </a>
+	<ul class="nav nav-tabs" role="tablist">
+		<li class="active"><a href="#details"> Details </a></li>
+		<li><a href="#time"> Time of solving</a></li>
+		<li><a href="#feeds"> Feedback</a></li>
+	</ul>
+	<div class="tab-content">
+		<div class="tab-pane fade in active" id="details">
+			<h1 class="text-center"> Details of all Participants </h1>
+			<div>
+				<table class="table table-striped">
+					<thead class="text-center">
+						<td>Username</td>
+						<td>Name</td>
+						<td>College</td>
+						<td>Email</td>
+						<td>Score</td>
+					</thead>
+					<% users.forEach(function(user){%>
+					<% if (user.username!=="admin"){ %>
+					<tbody>
+						<tr> 
+							<td class="text-center"><%= user.username %></td>
+					 		<td class="text-center"><%= user.name %></td>
+					 		<td class="text-center"><%= user.college %></td>
+					 		<td class="text-center"><%= user.email %></td>
+					 		<td class="text-center"><%= user.score.length * 10 %></td>
+					 	</tr>
+					</tbody>
+					<% } %>
+					<% }); %>
+				</table>
+			</div>
+		</div>
+		<div class="tab-pane fade" id="time">
+			<h1 class="text-center"> Details of all Participants </h1>
+			<div>
+				<table class="table table-striped table-responsive">
+					<thead class="text-center">
+						<td>Username</td>
+						<td>Name</td>
+						<td>Score</td>
+						<td>Time and date of solving each Question </td>
+					</thead>
+					<% users.forEach(function(user){%>
+					<% if (user.username!=="admin"){ %>
+					<tbody>
+						<tr> 
+							<td class="text-center"><%= user.username %></td>
+					 		<td class="text-center"><%= user.name %></td>
+					 		<td class="text-center"><%= user.score.length * 10 %></td>
+					 		<td class="text-center">
+					 		<%= user.time %>
+					 		</td>
+					 	</tr>
+					</tbody>
+					<% } %>
+					<% }); %>
+				</table>
+			</div>
+		</div>
+		<div class="tab-pane fade" id="feeds">
+			<h1 class="text-center"> Feedback of Participants </h1>
+			<div>
+				<table class="table table-striped">
+					<thead class="text-center">
+						<tr>
+							<td> Username</td>
+							<td> Over-all experience </td>
+							<td> Look forward to this event</td>
+							<td> Like the website</td>
+							<td> New suggestions </td>
+						</tr>
+					</thead>
+					<% feedback.forEach(function(feed){%>
+					<tbody>
+						<tr> 
+							<td class="text-center"><%= feed.author.username %></td>
+							<td class="text-center"><%= feed.quesfeed %></td>
+							<td class="text-center"><%= feed.cfeed %></td>
+							<td class="text-center"><%= feed.webfeed %></td>
+							<td class="text-center"><%= feed.newfeed %></td>
+					 	</tr>
+					</tbody>
+					<% }); %>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+$(document).ready(function(){
+    $(".nav-tabs a").click(function(){
+        $(this).tab('show');
+    });
+});
+</script>
+
+<% include partials/footer %>
