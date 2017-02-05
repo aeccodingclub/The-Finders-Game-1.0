@@ -19,18 +19,17 @@ font-family: 'Barrio', cursive;
 font-family: 'Homemade Apple', cursive;
 }
 .handlee{
-font-family: 'Calligraffitti', cursive;
-}
-.rock{
-font-family: 'Rock Salt', cursive;
-}
-.ceviche{
-font-family: 'Ceviche One', cursive;
+font-family: 'Handlee', cursive;
 }
 .special{
   font-family: 'Inconsolata',cursive;
 }
-
+.fort{
+font-family: 'Fontdiner Swanky', cursive;
+padding-bottom:20px; 
+margin-top:-20px; 
+font-size:60px;
+}
 .jonquil{
 background: #FFEEEE; 
 background: -webkit-linear-gradient(to left, #FFEEEE , #DDEFBB); 
@@ -41,12 +40,6 @@ background: linear-gradient(to left, #FFEEEE , #DDEFBB); }
 background: #34e89e;
 background: -webkit-linear-gradient(to left, #34e89e , #0f3443); 
 background: linear-gradient(to left, #34e89e , #0f3443); 
-}
-.venice{
-background: #6190E8;
-background: -webkit-linear-gradient(to left, #6190E8 , #A7BFE8);
-background: linear-gradient(to left, #6190E8 , #A7BFE8); 
-        
 }
 .royal{
 background: #141E30; 

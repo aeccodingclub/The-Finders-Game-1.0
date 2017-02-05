@@ -7,41 +7,61 @@
 </center>
 <% } %>
 <div class="row container-fluid">
-<div class="col-sm-2 logo">
-   
-    <center><img src="/images/logo.png"></center>
+  <div class="row">
+    <div class="col-sm-12 logo">
+        <center><img src="/images/logo.png"></center>
+    </div>
   </div>
- <div class="col-sm-8 logo">
- <div id="landing-header">
-        <h1 class="rock" style="padding-bottom:20px;">Treasure Trove: The Finder's Game</h1>
+  <div class="row">
+    <div class="col-sm-12 logo">
+      <div id="landing-header">
+        <h1 class="fort">Treasure Trove: The Finder's Game</h1>
         <% if (!currentUser) { %>
+        <div style="margin-bottom:10px;">
+        <a href="#Modal3" role="button" data-toggle="modal" data-target="#Modal3" class=" button btn btn-lg btn-info">How To play </a>
+        </div>
+        <div>
         <a href="#Modal2" role="button" data-toggle="modal" data-target="#Modal2" class=" button btn btn-lg btn-success">Register to Participate </a>
+        </div>
         <% } %>
-</div>
-    
-  </div>
-  
-  <div class="col-sm-2 logo">
-    
-    <center><img src="/images/pyro.png" height=200px; width=200px></center>
-
+    </div>
   </div>
 </div>
-
-
- <ul class="slideshow">
+<ul class="slideshow">
       <li></li>
       <li></li>
       <li></li>
       <li></li>
       <li></li>
 </ul>
+<div class="modal fade" id="Modal3">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button class="close" data-dismiss="modal">X</button>
+            <h2 class="modal-title text-center Barrio">How To Play</h2>
+          </div>
+          <div class="modal-body">
+           <p><strong>Hello Pirates, </strong><p>
+           <p>Warm greetings from the family of The Finder's Game. This Game is all about mystery and deduction. There are two Rounds comprising of 10 questions each. Round 1 tests your deduction capabilities and skills in exploiting the internet to find the correct answer.</p>
+           <p> Only after solving all the questions of Round 1, you will be revealed with a secret page and a key. The key will be displayed on top of your page. You have to use that key in order to solve questions in Round 2.
+          Even if all the questions of Round 2 will be available to you but you cannot solve it without the key. So finishing Round 1 is mandatory.
+           </p>
+           <p>Round 2 is surprise and will test your stability and understanding capability. It features a lot more complicacy than Round 1. </p><br>
+           <div class="modal-footer">
+           <p class="text-center"><strong> The Game will be on for 48 hours </strong></p>
+           <p class="text-center"> <strong>All the questions are made from standard means and logic. It follows certain rules to crack and solve each question. This game is recommended for anyone who likes to solve puzzles and test their deductive skills </strong></p>
+           </div>
+          </div>
+        </div>
+      </div>
+    </div>
 <div class="modal fade" id="Modal">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <button class="close" data-dismiss="modal">x</button>
-            <h2 class="modal-title text-center coiny">LOGIN</h2>
+            <button class="close" data-dismiss="modal">X</button>
+            <h2 class="modal-title text-center Barrio">LOGIN</h2>
           </div>
           <div class="modal-body">
             <h3>Don't have an account? <a href="#Modal2" role="button" data-toggle="modal" data-target="#Modal2">Register Here</a></h3>
@@ -64,8 +84,8 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <button class="close" data-dismiss="modal">x</button>
-            <h2 class="modal-title text-center coiny">Register</h2>
+            <button class="close" data-dismiss="modal">X</button>
+            <h2 class="modal-title text-center Barrio">Register</h2>
           </div>
           <div class="modal-body">
             <form role="form" action="/register" method="POST">
