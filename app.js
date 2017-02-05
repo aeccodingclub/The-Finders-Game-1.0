@@ -18,12 +18,8 @@ var indexRoutes		= require("./routes/index");
 var commentRoutes	= require("./routes/comment");
 var feedbackRoutes	= require("./routes/feedback");
 
-
 mongoose.Promise = global.Promise;
 mongoose.connect(process.env.DATABASEURL);
-// mongoose.connect("mongodb://Equinox:Equinox7@ds139869.mlab.com:39869/thefindersgame");
-
-
 
 app.set('view engine','ejs');
 app.use(bodyParser.urlencoded({extended:true}));
