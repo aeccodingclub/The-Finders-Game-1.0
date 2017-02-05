@@ -19,7 +19,8 @@ var commentRoutes	= require("./routes/comment");
 var feedbackRoutes	= require("./routes/feedback");
 
 mongoose.Promise = global.Promise;
-mongoose.connect(process.env.DATABASEURL);
+var url = process.env.DATABASEURL || "mongodb://localhost/questionsdb";
+mongoose.connect(url);
 
 app.set('view engine','ejs');
 app.use(bodyParser.urlencoded({extended:true}));
