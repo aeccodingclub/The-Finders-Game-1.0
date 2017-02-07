@@ -53,6 +53,6 @@ app.use("/questions",questionRoutes);
 app.use(commentRoutes);
 app.use(feedbackRoutes);
 app.set('port', (process.env.PORT || 5000));
-app.listen(app.get('port'), function() {
+app.listen(app.get('port'), process.env.IP, function() {
   console.log('Node app is running on port', app.get('port'));
 });
