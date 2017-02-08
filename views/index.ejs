@@ -62,7 +62,7 @@
 								</td>
 								<% users.forEach(function(user){%>
 								<% if (currentUser.username==user.username){ %>
-								<% if (user.score.length*10==100) { %>
+								<% if (user.score.length*10>=100) { %>
 								<td>
 								 	<h3> <span class="glyphicon glyphicon-book" aria-hidden="true"></span> <a href="/untoldstory"> Story </h3></a>			 		
 								</td>
