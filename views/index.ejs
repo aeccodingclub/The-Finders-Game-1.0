@@ -3,7 +3,7 @@
 <div class="row container-fluid jumbotron orca">
 	<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
 		<div class="container" style="padding-top:30px;">
-		<center><img src="/images/logo.png"></center>
+		<center><img src="http://i.imgur.com/2UaHFag.png"></center>
 		</div>
 	</div>
 	<div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
@@ -18,7 +18,7 @@
 			<% if (currentUser.username!="admin") {%>
 			<% if(count==0){ %>
 						<h1 class="Barrio">Ahoy Matey!</h1> 
-						<h3 class="lobster">Get Ready to roll in</h3>
+						<h3 class="lobster">Get Ready to roll at 00:00 am on 12th of Feb.</h3>
 							
 			<% } else{ %>
 				<% users.forEach(function(user){%>
@@ -28,12 +28,15 @@
 							<p class="lobster">The intelligent picker </p>
 						<% } %>
 						<% if (user.score.length*10 == 100) { %>
-							<h1 class="handlee">Find the key to move to the next round</h1>
-							<p class="lobster">Hint: Rearrange imagetags to get the key </p>
+							<p> Congrats you have unlocked the story. Carefully read the story and answer the questions of Round 2 </p>
+							<h1 class="handlee">Before that Find the key to move to the next round</h1>
+							<p>Hint: Rearrange imagetags to get the key.<br> You will get a word. <br> Use this word to answer questions of Round 2. <br>For eg: if the answer is "hello",<br> then answer the questions is in this format "word.hello" (except the quotations)</p>
+
 						<% } %>
 						<% if (user.score.length*10 > 100) { %>
 							<h1 class="Barrio">Welcome to Round Two </h1>
 							<p class="lobster">The Vengeance</p>
+
 						<% } %>
 					<% } %>
 				<% }); %>
@@ -57,6 +60,15 @@
 							 	<td>
 								 	<h3> <span class="glyphicon glyphicon-book" aria-hidden="true"></span> <a href="/rules"> Rules </h3></a>			 		
 								</td>
+								<% users.forEach(function(user){%>
+								<% if (currentUser.username==user.username){ %>
+								<% if (user.score.length*10==100) { %>
+								<td>
+								 	<h3> <span class="glyphicon glyphicon-book" aria-hidden="true"></span> <a href="/untoldstory"> Story </h3></a>			 		
+								</td>
+								<% } %>
+								<% } %>
+								<% }); %>
 								<td>				
 									<h3> <span class="glyphicon glyphicon-flag" aria-hidden="true"></span><a href="/tools"> Tools</h3> </a>
 								</td>
