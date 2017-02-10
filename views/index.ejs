@@ -148,8 +148,13 @@
 		</div>
 	</div>
 	<div class="col-lg-9 col-md-9 col-sm-7 col-xs-6 display">
-		<div class="row text-center" style="display:flex; flex-wrap: wrap;">
+	<% if (count==0){ %>
+	<h1 class="text-center lobster"> Questions will be posted here on 00:00 am 12th of Febreuary </h1>
+	<% } %>
+	<% if (count!=0){ %>
 		<% questions.forEach(function(question){%>
+		<div class="row text-center" style="display:flex; flex-wrap: wrap;">
+		
 			<div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
 				<div class="thumbnail">
 					<img src="<%= question.imagetag %>" class="image-responsive">
@@ -183,10 +188,11 @@
 	 				<% } %>
 					</p>
 				</div>		
-			</div>
-		<% }); %>
+			</div>		
 		</div>
-	</div>
+		<% }); %>
+		<% } %>
+	</div>	
 </div>
 <div class="row container-fluid" style="margin-top: 20px;">
 	<form class="form-horizontal" action="/comment" method="POST">
