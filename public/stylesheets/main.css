@@ -76,7 +76,7 @@ background: linear-gradient(to left, #000000 , #434343);
 	font-size: 60px;
 }
 .thumbnail{
-background: #0003;
+background: transparent;
 }
 	.side{
 		padding-bottom:30px

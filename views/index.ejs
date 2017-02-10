@@ -21,6 +21,8 @@
 						<h3 class="lobster">Get Ready to roll at 00:00 am on 12th of Feb.</h3>
 							
 			<% } else{ %>
+				<div class="tcw" data-id="Countdown-42271" style="position: relative; display: inline-block; margin: 0 auto; width: 80%; margin-top:5px; margin-bottom: -20px;"><a href="//www.tickcounter.com/countdown/42271/the-game-ends-in" title="The Game Ends In">The Game Ends In</a><a href="//www.tickcounter.com/" title="Countdown">Countdown</a></div><style>.tcw:after { content: ""; display: block; margin-top: 7%; }</style><script>(function(d, s, id) { var js, pjs = d.getElementsByTagName(s)[0]; if (d.getElementById(id)) return; js = d.createElement(s); js.id = id; js.src = "//www.tickcounter.com/static/js/loader.js"; pjs.parentNode.insertBefore(js, pjs); }(document, "script", "tickcounter-sdk"));</script>
+
 				<% users.forEach(function(user){%>
 						<% if (user.username==currentUser.username) { %>
 						<% if (user.score.length*10 < 100) { %>
@@ -148,13 +150,14 @@
 		</div>
 	</div>
 	<div class="col-lg-9 col-md-9 col-sm-7 col-xs-6 display">
-	<% if (count==0){ %>
-	<h1 class="text-center lobster"> Questions will be posted here on 00:00 am 12th of Febreuary </h1>
-	<% } %>
+		<% if (count==0){ %>
+			<h1 class="text-center lobster"> Questions will be posted here on 00:00 am 12th of Febreuary </h1>
+			<div class="tcw" data-id="Countdown-42256" style="position: relative; display: inline-block; margin: 0 auto; width: 97%"><a href="//www.tickcounter.com/countdown/42256/the-game-begins-in" title="The Game Begins In">The Game Begins In</a><a href="//www.tickcounter.com/" title="Countdown">Countdown</a></div><style>.tcw:after { content: ""; display: block; margin-top: 10%; }</style><script>(function(d, s, id) { var js, pjs = d.getElementsByTagName(s)[0]; if (d.getElementById(id)) return; js = d.createElement(s); js.id = id; js.src = "//www.tickcounter.com/static/js/loader.js"; pjs.parentNode.insertBefore(js, pjs); }(document, "script", "tickcounter-sdk"));</script>
+		<% } %>
 	<% if (count!=0){ %>
-		<% questions.forEach(function(question){%>
-		<div class="row text-center" style="display:flex; flex-wrap: wrap;">
 		
+		<div class="row text-center" style="display:flex; flex-wrap: wrap;">
+		<% questions.forEach(function(question){%>
 			<div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
 				<div class="thumbnail">
 					<img src="<%= question.imagetag %>" class="image-responsive">
@@ -188,13 +191,13 @@
 	 				<% } %>
 					</p>
 				</div>		
-			</div>		
+			</div>
+			<% }); %>		
 		</div>
-		<% }); %>
 		<% } %>
 	</div>	
 </div>
-<div class="row container-fluid" style="margin-top: 20px;">
+<div class="row container-fluid" style="margin-top: 5px;">
 	<form class="form-horizontal" action="/comment" method="POST">
 		<div class="col-lg-3 col-md-3 col-sm-12">
 			<div class="form-group form-group-lg" >
