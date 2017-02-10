@@ -29,6 +29,12 @@ font-family: 'Pacifico', cursive;
 padding-bottom:20px; 
 margin-top:-50px; 
 }
+.fort2{
+font-family: 'Pacifico', cursive;
+padding-bottom:20px; 
+margin-top:-20px; 
+color:white;
+}
 .jonquil{
 background: #FFEEEE; 
 background: -webkit-linear-gradient(to left, #FFEEEE , #DDEFBB); 
